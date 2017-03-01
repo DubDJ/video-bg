@@ -1,9 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Barrio|Josefin+Sans');
+@import url( 'https://fonts.googleapis.com/css?family=Barrio|Josefin+Sans');
 
-* {box-sizing: border-box;}
+@media only screen and (max-width: 768px) {
+  video {display: none;}
+  .video-bg, .transparent {
+    background-image: url('../video/poster.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
 
-html, body, .container {
-  margin: 0; padding: 0;
+* {
+  box-sizing: border-box;
+}
+
+body, html, .container {
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
 }
@@ -21,7 +34,7 @@ body {
 }
 
 video {
-  position: absolute;
+  position: fixed;
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
@@ -33,11 +46,48 @@ video {
   width: 100%;
 }
 
-.video-overlay h1 {
-  position: absolute;
-  top: 40%; left: 0; right: 0;
+.half-screen {
+  height: 100%;
+  > div {height: 50%;}
+}
 
+.thirds-screen {
+  height: 100%;
+  > div {height: 33.33%;}
+}
+
+.details {
+  height: 100%;
+  background-color: #FFF;
+  z-index: 2;
+  padding: 20px;
+  margin: 0;
+  color: #000;
   text-align: center;
+  overflow: scroll;
+}
+
+.details:nth-of-type(even) {
+  color: #FFF;
+  background-color: #222;
+}
+
+.transparent {
+  color: #FFF;
+  text-align: center;
+  @media only screen and (min-width: 769px) {
+    background-image: url('../video/pattern.png');
+    background-repeat: repeat;
+  }
+}
+
+h1 {
+  position: relative;
+  top: 40%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0;
   span {
     padding: 10px;
     color: #FFF;
@@ -46,10 +96,4 @@ video {
     font-size: 1.3em;
     text-transform: uppercase;
   }
-}
-
-.details p {
-  padding: 20px;
-  margin: 0;
-  color: #000;
 }

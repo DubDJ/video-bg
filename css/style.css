@@ -1,8 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Barrio|Josefin+Sans");
+@media only screen and (max-width: 768px) {
+  video {
+    display: none; }
+  .video-bg, .transparent {
+    background-image: url("../video/poster.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover; } }
+
 * {
   box-sizing: border-box; }
 
-html, body, .container {
+body, html, .container {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -19,7 +28,7 @@ body {
   overflow: hidden; }
 
 video {
-  position: absolute;
+  position: fixed;
   min-width: 100%;
   min-height: 100%;
   z-index: -1; }
@@ -29,21 +38,49 @@ video {
   height: 100%;
   width: 100%; }
 
-.video-overlay h1 {
-  position: absolute;
+.half-screen {
+  height: 100%; }
+  .half-screen > div {
+    height: 50%; }
+
+.thirds-screen {
+  height: 100%; }
+  .thirds-screen > div {
+    height: 33.33%; }
+
+.details {
+  height: 100%;
+  background-color: #FFF;
+  z-index: 2;
+  padding: 20px;
+  margin: 0;
+  color: #000;
+  text-align: center;
+  overflow: scroll; }
+
+.details:nth-of-type(even) {
+  color: #FFF;
+  background-color: #222; }
+
+.transparent {
+  color: #FFF;
+  text-align: center; }
+  @media only screen and (min-width: 769px) {
+    .transparent {
+      background-image: url("../video/pattern.png");
+      background-repeat: repeat; } }
+
+h1 {
+  position: relative;
   top: 40%;
   left: 0;
   right: 0;
-  text-align: center; }
-  .video-overlay h1 span {
+  text-align: center;
+  margin: 0; }
+  h1 span {
     padding: 10px;
     color: #FFF;
     border: 3px solid white;
     font-family: 'Barrio', cursive;
     font-size: 1.3em;
     text-transform: uppercase; }
-
-.details p {
-  padding: 20px;
-  margin: 0;
-  color: #000; }
