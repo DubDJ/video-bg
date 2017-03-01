@@ -7,7 +7,6 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-
   }
 }
 
@@ -64,6 +63,8 @@ video {
   padding: 20px;
   margin: 0;
   color: #000;
+  text-align: center;
+  overflow: scroll;
 }
 
 .details:nth-of-type(even) {
@@ -74,6 +75,10 @@ video {
 .transparent {
   color: #FFF;
   text-align: center;
+  @media only screen and (min-width: 769px) {
+    background-image: url('../video/pattern.png');
+    background-repeat: repeat;
+  }
 }
 
 h1 {
