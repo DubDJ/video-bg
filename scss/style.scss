@@ -39,6 +39,7 @@ video {
   position: fixed;
   min-width: 100%;
   min-height: 100%;
+  width: 100%;
   z-index: -1; // Sets video to stay behind all other body content.
 }
 
@@ -104,3 +105,5 @@ h1 {
     text-transform: uppercase;
   }
 }
+
+// Videos downloaded for free from https://pexels.com licensed under the Creative Commons Zero (CC0) license.
